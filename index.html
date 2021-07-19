@@ -186,7 +186,7 @@
   </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell" style=""><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard1111</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="c"># With shell, you can just pass the correct header with each request</span>
   curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard3333</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard3333</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn111</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div>
@@ -201,17 +201,65 @@
 <aside class="notice">
   Please refer to the code
 </aside>
-<h1 id="Interface_Description">Interface Description</h1><div class="highlight"><pre class="highlight ruby tab-ruby" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id="Interface_Description">Interface Description</h1><div class="highlight"><pre class="highlight ruby tab-ruby" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
+  var md5 = require('md5');
+  var request = require('request');
+  var data = {amount: 10000,appKey: "kpecb34edd45cf4d2bb42229aac78f66c5",createType: 1,currencyType: 3,goodsName: "test1111",merchantOrderNum: "test"+Math.round(new Date() / 1000),ts: Math.round(new Date() / 1000),appsecret: "sbf54f0ae60704c69859b028c5cdb1fbd"}
+  request.post({
+      headers: {'Content-Type':'application/json','Accept-Language':'zh-CN'},
+      url: 'https://openapi.payurl.app/pay/order/create',
+      body: send_data,
+      json: true
+  }, function(error, response, body){
+      if(error){
+          return_data = {
+              code: 201,
+              msg: "api-error"
+          }
+      }else{
+          resolve(body);
+      }
+  });
+</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code>
+  <span class="nb">var md5 = require('md5');</span> 
+  <span class="nb">var request = require('request');</span><br>
+  <span class="s1">var data = {amount: 10000,appKey: "kpecb34edd45cf4d2bb42229aac78f66c5",createType: 1,currencyType: 3,goodsName: "test1111",merchantOrderNum: "test"+Math.round(new Date() / 1000),ts: Math.round(new Date() / 1000),appsecret: "sbf54f0ae60704c69859b028c5cdb1fbd"}</span> 
+  <span class="s1">
+  request.post({
+      headers: {'Content-Type':'application/json','Accept-Language':'zh-CN'},
+      url: 'https://openapi.payurl.app/pay/order/create',
+      body: send_data,
+      json: true
+  }, function(error, response, body){
+      if(error){
+          return_data = {
+              code: 201,
+              msg: "api-error"
+          }
+      }else{
+          resolve(body);
+      }
+  });
+  </span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard11111111</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kn"></span> <span class="nn"></span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">livilpay</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">Interface</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
+<span class="n"></span> <span class="o"></span> <span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span><span class="s">
+$sign = md5("AMOUNT=10000&APPKEY=kpecb34edd45cf4d2bb42229aac78f66c5&CREATETYPE=1&CURRENCYTYPE=3&GOODSNAME=test1111&MERCHANTORDERNUM="test".time()&TS=1626223780&APPSECRET=sbf54f0ae60704c69859b028c5cdb1fbd");
+$send_data = array(
+  "createType" => 1,
+  "currencyType" => 3,
+  "amount" => 10000,
+  "merchantOrderNum" => "test".$time(),
+  "goodsName" => "test1111",
+  "appKey" => "kpecb34edd45cf4d2bb42229aac78f66c5",
+  "sign" => $sign,
+  "ts" => 1626223780
+);
+</span><span class="p"></span>
+<span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell" style=""><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn333</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">Interface</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
@@ -219,22 +267,40 @@
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="p">[</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-</span><span class="p">},</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
+  {
+    "code": 200,
+    "msg": "Successful operation ",
+    "data": {
+      "merchantName": "PayBank Store",
+      "payOrderNum": "P20210719160716000844",
+      "merchantOrderNum": "test1626682035",
+      "goodsName": "test1111",
+      "expiredTime": "2021-07-20 02:07:16",
+      "pageJumpUrl": "https://payments.paybank.com/?order=P20210719160716000844"
+    },
+    "total": 1,
+    "serverTime": 1626682036,
+    "serverTimeStr": "2021-07-19 16:07:16"
+  }
+</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="p"></span><span class="w">
+</span>
+<span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful operation "</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">{
+      "merchantName": "PayBank Store",
+      "payOrderNum": "P20210719160716000844",
+      "merchantOrderNum": "test1626682035",
+      "goodsName": "test1111",
+      "expiredTime": "2021-07-20 02:07:16",
+      "pageJumpUrl": "https://payments.paybank.com/?order=P20210719160716000844"  
+  }</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"serverTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1626682036</span>,<span class="w">
+  </span><span class="nl">"serverTimeStr"</span><span class="p">:</span><span class="w"> </span><span class="mi">"2021-07-19 16:07:16"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p"></span><span class="w">
 </span></code></pre></div>
 <h3 id="http-Host">HOST Request</h3>
 <p><code>HOST https://openapi.payurl.app/</code></p>
@@ -363,7 +429,7 @@
 <aside class="success">
 Please refer to the code
 </aside>
-<h2 id="get-a-specific-kitten">Get payment currency list interface</h2><div class="highlight"><pre class="highlight ruby tab-ruby" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id="get-a-specific-kitten">Get payment currency list interface</h2><div class="highlight"><pre class="highlight ruby tab-ruby" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="nb">require</span> <span class="s1">'kittn444'</span>
 
   <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
   <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -373,7 +439,7 @@ Please refer to the code
   <span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
   </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell" style=""><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-  </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+  </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn555</span><span class="dl">'</span><span class="p">);</span>
   
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
