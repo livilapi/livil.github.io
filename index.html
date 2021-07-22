@@ -114,7 +114,7 @@
     </script>
 </head>
 
-<body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+<body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;]">
    <a href="index.html#" id="nav-button">
       <span>
         NAV
@@ -127,7 +127,7 @@
               <a href="index.html#" data-language-name="shell">shell</a>
               <a href="index.html#" data-language-name="ruby">nodejs</a>
               <a href="index.html#" data-language-name="python">php</a>
-              <a href="index.html#" data-language-name="javascript">java</a>
+              <!-- <a href="index.html#" data-language-name="javascript">java</a> -->
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -141,18 +141,13 @@
             <a href="index.html#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="index.html#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="index.html#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="index.html#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="index.html#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
-                  </li>
-              </ul>
+            <a href="index.html#Interface_Description" class="toc-h1 toc-link" data-title="Interface Description">Interface Description</a>
+          </li>
+          <li>
+            <a href="index.html#Get_payment_currency_list" class="toc-h1 toc-link" data-title="Get payment currency list">Get payment currency list</a>
+          </li>
+          <li>
+            <a href="index.html#Callback_information" class="toc-h1 toc-link" data-title="Callback information">Callback information</a>
           </li>
           <li>
             <a href="index.html#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
@@ -174,6 +169,10 @@
         <p>1. The interface adopts UTF-8 character set encoding.</p>
 <p>2. The interface adopts https protocol</p>
 <p>3. The interface access frequency is limited to background configuration.</p>
+<h3 id="http-Host">HOST Request</h3>
+<p><code>HOST https://openapi.payurl.app/</code></p>
+<h3 id="http-Host">HOST Request</h3>
+<p><a href="https://github.com/livilapi">Api Demo Code Download</a></p>
 <h1 id="authentication">Authentication</h1>
 <blockquote>
 <p>signature code:</p>
@@ -240,7 +239,6 @@ Description is being prepared...
       }
   });
 
-  <a href="http://114.203.211.76/test/payments_api/open-api-node.zip" style="cursor:pointer;">Download Api Demo code</a>
   </span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
 $sign = md5("AMOUNT=10000&APPKEY=kpecb34edd45cf4d2bb42229aac78f66c5&CREATETYPE=1&CURRENCYTYPE=3&GOODSNAME=test1111&MERCHANTORDERNUM="test".time()&TS=1626223780&APPSECRET=sbf54f0ae60704c69859b028c5cdb1fbd");
@@ -309,13 +307,11 @@ function post($url, $fields){
 
 echo $return_data;
 
-<a href="http://114.203.211.76/test/payments_api/open-api-php.zip" style="cursor:pointer;">Download Api Demo code</a>
 </span><span class="p"></span>
 <span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell" style=""><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd"></span> <span class="nx"></span> <span class="o"></span> <span class="nx"></span><span class="p"></span><span class="dl"></span><span class="s1">
-<a href="http://114.203.211.76/test/payments_api/open-api-Java.zip" style="cursor:pointer;">Download Api Demo code</a>
 </span><span class="dl"></span><span class="p"></span>
 
 </code></pre></div>
@@ -357,8 +353,6 @@ echo $return_data;
 </span><span class="p">}</span><span class="w">
 </span><span class="p"></span><span class="w">
 </span></code></pre></div>
-<h3 id="http-Host">HOST Request</h3>
-<p><code>HOST https://openapi.payurl.app/</code></p>
 <h3 id="http-HTTP">HTTP Request</h3>
 <p><code>POST /pay/order/create</code></p>
 <h3 id="Sample-signature">Sample signature</h3>
@@ -381,7 +375,7 @@ echo $return_data;
 <tr>
 <td>Accept-Language</td>
 <td>String</td>
-<td>Client language type zh-CN: Chinese, en-US: English, ko-KR: Korean</td>
+<td>Client language type: zh-CN,en-US,ko-KR</td>
 </tr>
 </tbody></table>
 
@@ -484,7 +478,7 @@ echo $return_data;
 <aside class="success">
 Please refer to the code
 </aside>
-<h2 id="get-a-specific-kitten">Get payment currency list interface</h2><div class="highlight"><pre class="highlight ruby tab-ruby" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
+<h2 id="Get_payment_currency_list">Get payment currency list interface</h2><div class="highlight"><pre class="highlight ruby tab-ruby" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
 var md5 = require('md5');
 var request = require('request');
 var send_data = {appKey:kpecb34edd45cf4d2bb42229aac78f66c5,sign:sign,ts:Math.round(new Date() / 1000)}
@@ -520,7 +514,7 @@ request.post({
   }
 });
 
-<a href="http://114.203.211.76/test/payments_api/open-api-node.zip" style="cursor:pointer;">Download Api Demo code</a>
+
 </span>
   </code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
 $sign = md5("APPKEY=kpecb34edd45cf4d2bb42229aac78f66c5&TS=1626223780&APPSECRET=sbf54f0ae60704c69859b028c5cdb1fbd);
@@ -579,13 +573,12 @@ function post($url, $fields){
 
 echo $return_data;
 
-<a href="http://114.203.211.76/test/payments_api/open-api-php.zip" style="cursor:pointer;">Download Api Demo code</a>
   </span><span class="p"></span>
   <span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span><span class="mi"></span><span class="p"></span>
   </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell" style=""><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
   </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd"></span> <span class="nx"></span> <span class="o"></span> <span class="nx"></span><span class="p"></span><span class="dl"></span><span class="s1">
-<a href="http://114.203.211.76/test/payments_api/open-api-Java.zip" style="cursor:pointer;">Download Api Demo code</a>
+
   </span><span class="dl"></span><span class="p"></span>
   
 </code></pre></div>
@@ -683,7 +676,7 @@ echo $return_data;
 <tr>
 <td>Accept-Language</td>
 <td>String</td>
-<td>Client language type zh-CN: Chinese, en-US: English, ko-KR: Korean</td>
+<td>zh-CN, en-US,ko-KR</td>
 </tr>
 </tbody></table>
 
@@ -747,20 +740,12 @@ echo $return_data;
   </tr>
 </tbody></table>
 
-<h2 id="delete-a-specific-kitten">Callback information</h2><div class="highlight"><pre class="highlight ruby tab-ruby" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="nb"></span> <span class="s1">
-POST http://example.com/
-</span>
+<h2 id="Callback_information">Callback information</h2><div class="highlight"><pre class="highlight ruby tab-ruby" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="nb"></span>
   </code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kn"></span> <span class="nn"></span>
   
-  <span class="n"></span> <span class="o"></span> <span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span><span class="s">
-POST http://example.com/
-  </span><span class="p"></span>
-  </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell" style=""><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd"></span> <span class="nx"></span> <span class="o"></span> <span class="nx"></span><span class="p"></span><span class="dl"></span><span class="s1">
-POST http://example.com/
-</span><span class="dl"></span><span class="p"></span>
+  <span class="n"></span> <span class="o"></span> <span class="n"></span><span class="p"></span><span class="n"></span><span class="p"></span><span class="p"></span>
+  </code></pre></div><div class="highlight"></div><div class="highlight"><pre class="highlight javascript tab-javascript" style="display: none;"><div class="copy-clipboard"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Copy to Clipboard</title><path d="M18 6v-6h-18v18h6v6h18v-18h-6zm-12 10h-4v-14h14v4h-10v10zm16 6h-14v-14h14v14z"></path></svg></div><code><span class="kd"></span> <span class="nx"></span> <span class="o"></span> <span class="nx"></span><span class="p"></span><span class="dl"></span>
+<span class="dl"></span><span class="p"></span>
 
 </code></pre></div>
 <blockquote>
@@ -914,7 +899,7 @@ POST http://example.com/
             <a href="#" data-language-name="shell" class="active">shell</a>
             <a href="#" data-language-name="ruby">nodejs</a>
             <a href="#" data-language-name="python">php</a>
-            <a href="#" data-language-name="javascript">java</a>
+            <!-- <a href="#" data-language-name="javascript">java</a> -->
       </div>
   </div>
 </div>
