@@ -195,7 +195,7 @@ Description is being prepared...
 <p>The appkey and appsecret <code>are checked on the </code> merchant page.</p>
 </blockquote>
 
-<p>livilpay uses API keys to allow access to the API. You can register a new livilpay API key at our <a href="https://merchant.paybank.com/">developer portal</a>.</p>
+<p>paybank uses API keys to allow access to the API. You can register a new paybank API key at our <a href="https://merchant.paybank.com/">developer portal</a>.</p>
 
 <p>Request signature, all parameter pairs are sorted in ascending order by dictionary (abcd ...), and the secret assigned by the platform is the key. First, all parameters except the signature itself need to be added in the format "KEY = value" and use the character "&". Add the exact order of the request, then use md5 to encrypt the generated string and then lowercase it. Note: The sign parameter does not participate in the signature; the null parameter does not participate in the signature.</p>
 
